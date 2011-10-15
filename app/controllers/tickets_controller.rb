@@ -17,6 +17,19 @@ class TicketsController < ApplicationController
 	def show
 	end
 	
+	def edit
+        end
+        
+        def update
+            if @ticket.update_attributes(params[:ticket])
+            	flash[:notice] = "Ticket has been updated."
+            	redirect_to [@project, @ticket]
+            else
+            	flash[:notice] = "Ticket has not been updated."
+            	render :acrion => "edit"
+            end
+        end
+	
 	before_filter :find_project
 	before_filter :find_ticket, :only => [:show, :edit, :update, :destroy]
 	
