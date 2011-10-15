@@ -29,6 +29,12 @@ class TicketsController < ApplicationController
             	render :acrion => "edit"
             end
         end
+        
+        def destroy
+            @ticket.destroy
+            flash[:notice] = "Ticket has been destroy."
+            redirect_to @project
+        end
 	
 	before_filter :find_project
 	before_filter :find_ticket, :only => [:show, :edit, :update, :destroy]
