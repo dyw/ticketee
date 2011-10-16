@@ -37,4 +37,6 @@ class ProjectsController < ApplicationController
 	    flash[:notice] = "The Project has been deleted."
 	    redirect_to projects_path
 	end
+	
+	before_filter :authorize_admin!, :except => [:index, :show]
 end
