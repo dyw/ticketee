@@ -38,5 +38,5 @@ class ProjectsController < ApplicationController
 	    redirect_to projects_path
 	end
 	
-	before_filter :authorize_admin!, :except => [:index, :show]
+	# before_filter :authorize_admin!, :except => [:index, :show]
 end
