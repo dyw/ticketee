@@ -1,1 +1,4 @@
 <%= @user %>
+<p>
+  <%= link_to "Delete user", admin_user_path(@user), :method => :delete, :confirm => "Are you sure want to delete user?" %>
+</p>
